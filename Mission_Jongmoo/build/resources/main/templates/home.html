@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Opinion Exchange</title>
+</head>
+<body>
+<h1>Opinion Exchange</h1>
+<ul>
+    <li th:each="MissionJongmoo : ${MissionJongmoo}" th:text="${MissionJongmoo.content}"></li>
+</ul>
+<form action="/add_opinion" method="post">
+    <label for="content">Your Opinion:</label>
+    <input type="text" id="content" name="content" th:field="*{content}" required>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
